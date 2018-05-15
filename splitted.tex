@@ -1,0 +1,122 @@
+% arara: pdflatex
+% !arara: indent: {overwrite: on}
+\documentclass[aspectratio=169]{beamer}
+
+\usepackage{ctex}
+
+\usetheme{CambridgeUS}
+
+\setbeamercolor{structure}{fg=cyan!90!black}
+\setbeamercolor{frametitle}{bg=cyan!90!black}
+%\setbeamercolor{title}{bg=cyan!90!black}
+\definecolor{frenchblue}{HTML}{0071BB}
+
+%\setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{微软雅黑}
+
+\usepackage{subfigure}
+
+%-chage foot part-------------------------------
+\makeatother
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.0\paperwidth,ht=2.25ex,dp=1ex,center]{author in head/foot}%
+    \usebeamerfont{author in head/foot}\insertshortauthor
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.63\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
+    \usebeamerfont{title in head/foot}\insertshorttitle
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.37\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}% 
+  \insertdate \hspace{0.2cm}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\makeatletter
+\setbeamertemplate{navigation symbols}{}
+%--------------------------------
+
+%-chage titlepage's font-------------------------------
+\setbeamercolor{title}{bg=red!65!black,fg=white}
+\usepackage{bm}
+\usepackage{comment}
+\usepackage{graphics} % used for scalebox
+\usepackage{multirow}%used for multicolumn
+\usepackage{array}%used for vrule
+\usepackage{subfigure}
+\usepackage{threeparttable} % used for footnotes in table
+
+%---set tikz highlighter------------------------
+\usepackage{multirow, booktabs, dcolumn, color} % Tables
+\usepackage[beamer,customcolors]{hf-tikz}
+\usetikzlibrary{calc}
+% To set the hypothesis highlighting boxes red.
+\tikzset{hl/.style={
+    set fill color=red!80!black!40,
+    set border color=red!80!black,
+  },
+}
+%-----------------------------------------------
+
+%---set tikz marker-----------------------------
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\tikzset{>=stealth}
+
+\newcommand{\tikzmark}[3][]{\tikz[overlay,remember picture,baseline] \node [anchor=base,#1](#2) {#3};}
+%-----------------------------------------------
+
+%---set textblock----------------------------
+\usepackage[absolute,overlay]{textpos}
+%--------------------------------------------------------
+
+%use bold arrow
+\usepackage{marvosym}
+
+%used for aligning the figure to left
+\usepackage[export]{adjustbox}
+
+%used for colored block
+\usepackage[listings,theorems]{tcolorbox}
+
+%used for algorithm
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
+\usepackage{algorithmic}
+
+\setbeamertemplate{sidebar right}
+{
+  \vfill%
+  \llap{\insertlogo\hskip0.1cm}%
+  \vskip2pt%
+  %\llap{\href{http://tex.stackexchange.com/}{A link to tex.sx}\hskip0.2cm}% NEW
+  \vskip3pt% NEW
+  \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
+  \vskip2pt%
+}
+
+\begin{document}
+
+%\title[Category-Level Transfer Learning from Knowledge Base to Microblog Stream for Accurate Event Detection]{基于知识迁移的社交媒体事件检测方法研究}
+\title[基于知识迁移的社交媒体事件检测方法研究]{基于知识迁移的社交媒体事件检测方法研究}
+%\author[]{黄威靖}
+\author[Weijing Huang]{Weijing Huang}
+\institute[EECS, Peking University]{School of Electronics Engineering and Computer Science, Peking University}
+\date{2018-06-05}
+%\maketitle
+
+\begin{frame}[plain]
+  \begin{tcolorbox}[width=0.28\textwidth,colframe= {frenchblue},colback={frenchblue},outer arc=0mm, fontupper=\color{white}]
+  博士论文答辩报告
+  \end{tcolorbox}    
+  \vspace{-1cm}
+  \titlepage  
+  \vspace*{1.5cm}
+\end{frame}
+
+
+\include{chaps/chapIntro}
+
+\include{chaps/chapPublications}
+
+\end{document}
