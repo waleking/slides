@@ -10,10 +10,6 @@
 %\setbeamercolor{structure}{fg=frenchblue}
 \setbeamercolor{frametitle}{fg=frenchblue}
 
-
-
-%\setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{微软雅黑}
-
 \usepackage{subfigure}
 
 %-chage foot part-------------------------------
@@ -26,11 +22,11 @@
     \usebeamerfont{author in head/foot}\insertshortauthor
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.63\paperwidth,ht=2.25ex,dp=1ex,center]{title in head/foot}%
-    \usebeamerfont{title in head/foot}\insertshorttitle
+    \usebeamerfont{title in head/foot}\textcolor{black}\insertshorttitle
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.37\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}% 
-  \insertdate \hspace{0.2cm}
-    \insertframenumber{} / \inserttotalframenumber\hspace*{1ex}
+  \textcolor{black}\insertdate \hspace{0.2cm}
+    \textcolor{black}\insertframenumber{} / \textcolor{black}\inserttotalframenumber\hspace*{1ex}
   \end{beamercolorbox}}%
   \vskip0pt%
 }
@@ -38,7 +34,7 @@
 \setbeamertemplate{navigation symbols}{}
 %--------------------------------
 
-%-chage titlepage's font-------------------------------
+%-change titlepage's font-------------------------------
 \usepackage{bm}
 \usepackage{comment}
 \usepackage{graphics} % used for scalebox
@@ -84,16 +80,6 @@
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage{algorithmic}
 
-\setbeamertemplate{sidebar right}
-{
-  \vfill%
-  \llap{\insertlogo\hskip0.1cm}%
-  \vskip2pt%
-  %\llap{\href{http://tex.stackexchange.com/}{A link to tex.sx}\hskip0.2cm}% NEW
-  \vskip3pt% NEW
-  \llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
-  \vskip2pt%
-}
 
 %########################################
 %########################################
