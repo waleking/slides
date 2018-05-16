@@ -11,6 +11,7 @@
 \setbeamercolor{frametitle}{fg=frenchblue}
 
 
+
 %\setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{微软雅黑}
 
 \usepackage{subfigure}
@@ -38,7 +39,6 @@
 %--------------------------------
 
 %-chage titlepage's font-------------------------------
-\setbeamercolor{title}{bg=red!65!black,fg=white}
 \usepackage{bm}
 \usepackage{comment}
 \usepackage{graphics} % used for scalebox
@@ -95,23 +95,58 @@
   \vskip2pt%
 }
 
+%########################################
+%########################################
+% Custom title page
+\setbeamertemplate{title page}
+{
+  %\vskip-0.59cm%
+  \hskip13.0cm%
+  \inserttitlegraphic%
+  \vfill%
+    \begin{beamercolorbox}[sep=12pt]{title}
+      \ifx\insertsubtitle\@empty%
+      \else%
+        {\usebeamerfont{subtitle}\usebeamercolor[fg]{subtitle}\begin{tikzpicture}
+			\node[fill=frenchblue,draw=frenchblue, text=white] at (0,0) {\insertsubtitle};
+			\end{tikzpicture}
+		}%
+        \vskip0.25em%
+      \fi%
+      %\begin{center} \line(1,0){450} \end{center}
+	  \usebeamerfont{title}\textcolor{frenchblue}\inserttitle\par%
+    \end{beamercolorbox}%
+    
+    \vskip2em\par
+    
+    \begin{beamercolorbox}[sep=6pt]{author}
+      \hskip23.5em \usebeamerfont{author}\insertauthor
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=6pt]{institute}
+      \hskip21em \usebeamerfont{institute}\insertinstitute
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[sep=6pt]{date}
+      \hskip25em \usebeamerfont{date}\insertdate
+    \end{beamercolorbox}
+  \vfill
+}
+
+\titlegraphic{\includegraphics[width=1cm]{pkulogo}
+}
+
+\title{基于知识迁移的社交媒体事件检测方法研究}
+\subtitle{博士论文答辩报告}
+\author{博士生：黄威靖\\ \hskip23em 导师：王腾蛟教授}
+\institute{北京大学信息科学技术学院数据库实验室}
+\date{2018-06-05}
+%########################################
+%########################################
+
 \begin{document}
 
-%\title[Category-Level Transfer Learning from Knowledge Base to Microblog Stream for Accurate Event Detection]{基于知识迁移的社交媒体事件检测方法研究}
-\title[基于知识迁移的社交媒体事件检测方法研究]{基于知识迁移的社交媒体事件检测方法研究}
-\author[]{黄威靖}
-%\author[Weijing Huang]{Weijing Huang}
-\institute[EECS, Peking University]{School of Electronics Engineering and Computer Science, Peking University}
-\date{2018-06-05}
-%\maketitle
 
 \begin{frame}[plain]
-  \begin{tcolorbox}[width=0.28\textwidth,colframe= {frenchblue},colback={frenchblue},outer arc=0mm, fontupper=\color{white}]
-  博士论文答辩报告
-  \end{tcolorbox}    
-  \vspace{-1cm}
-  \titlepage  
-  \vspace*{1.5cm}
+\maketitle
 \end{frame}
 
 
