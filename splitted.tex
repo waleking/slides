@@ -8,7 +8,7 @@
 
 \definecolor{frenchblue}{HTML}{0071BB}
 
-%-change headline-------------------------------
+%-change headline in each page-------------------------------
 \setbeamercolor{palette tertiary}{fg=white, bg=frenchblue}
 \setbeamertemplate{headline}
 {
@@ -24,11 +24,11 @@
 }
 
 
-%-change title-------------------------------
+%-change title part in each page-------------------------------
 \setbeamercolor{frametitle}{fg=frenchblue,bg=white}
 
 
-%-change foot part-------------------------------
+%-change foot part in each page-------------------------------
 \makeatother
 \setbeamertemplate{footline}
 {
@@ -49,6 +49,9 @@
 \makeatletter
 \setbeamertemplate{navigation symbols}{}
 %--------------------------------
+
+%---change color of items in enumerate environment--
+\setbeamertemplate{enumerate items}[default]
 
 \usepackage{bm}
 \usepackage{comment}
@@ -152,7 +155,7 @@
 
 
 \include{chaps/chapIntro}
-\include{chaps/chapPublications}
-\include{chaps/chapAcknowledgements}
+%\include{chaps/chapPublications}
+%\include{chaps/chapAcknowledgements}
 
 \end{document}
