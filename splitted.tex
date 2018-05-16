@@ -7,12 +7,28 @@
 \usetheme{CambridgeUS}
 
 \definecolor{frenchblue}{HTML}{0071BB}
-%\setbeamercolor{structure}{fg=frenchblue}
-\setbeamercolor{frametitle}{fg=frenchblue}
 
-\usepackage{subfigure}
+%-change headline-------------------------------
+\setbeamercolor{palette tertiary}{fg=white, bg=frenchblue}
+\setbeamertemplate{headline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.65ex,dp=1.5ex,center]{section in head/foot}%
+    \usebeamerfont{section in head/foot}\thesection.\insertsectionhead\hspace*{2ex}
+  \end{beamercolorbox}%
+  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,center]{subsection in head/foot}%
+    \usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
 
-%-chage foot part-------------------------------
+
+%-change title-------------------------------
+\setbeamercolor{frametitle}{fg=frenchblue,bg=white}
+
+
+%-change foot part-------------------------------
 \makeatother
 \setbeamertemplate{footline}
 {
@@ -26,7 +42,7 @@
   \end{beamercolorbox}%
   \begin{beamercolorbox}[wd=.37\paperwidth,ht=2.25ex,dp=1ex,center]{date in head/foot}% 
   \textcolor{black}\insertdate \hspace{0.2cm}
-    \textcolor{black}\insertframenumber{} / \textcolor{black}\inserttotalframenumber\hspace*{1ex}
+    \textcolor{black}\insertframenumber{} \textcolor{black}/ \textcolor{black}\inserttotalframenumber\hspace*{1ex}
   \end{beamercolorbox}}%
   \vskip0pt%
 }
@@ -34,7 +50,6 @@
 \setbeamertemplate{navigation symbols}{}
 %--------------------------------
 
-%-change titlepage's font-------------------------------
 \usepackage{bm}
 \usepackage{comment}
 \usepackage{graphics} % used for scalebox
