@@ -7,6 +7,12 @@
 \usetheme{CambridgeUS}
 
 \definecolor{frenchblue}{HTML}{0071BB}
+\definecolor{grassgreen}{HTML}{62AD54}
+\definecolor{ligthgray}{HTML}{D9D9D9}
+\definecolor{golden}{HTML}{FFBB3A}
+
+%-ruler------------------------------------------------------
+%\usepackage[texcoord,grid,gridunit=mm,gridcolor=red!10,subgridcolor=green!10]{eso-pic}
 
 %-change headline in each page-------------------------------
 \setbeamercolor{palette tertiary}{fg=white, bg=frenchblue}
@@ -17,7 +23,7 @@
   \begin{beamercolorbox}[wd=.6\paperwidth,ht=2.65ex,dp=1.5ex,center]{section in head/foot}%
     \usebeamerfont{section in head/foot}\thesection.\insertsectionhead\hspace*{2ex}
   \end{beamercolorbox}%
-  \begin{beamercolorbox}[wd=.5\paperwidth,ht=2.65ex,dp=1.5ex,center]{subsection in head/foot}%
+  \begin{beamercolorbox}[wd=.4\paperwidth,ht=2.65ex,dp=1.5ex,center]{subsection in head/foot}%
     \usebeamerfont{subsection in head/foot}\hspace*{2ex}\insertsubsectionhead
   \end{beamercolorbox}}%
   \vskip0pt%
@@ -25,8 +31,17 @@
 
 
 %-change title part in each page-------------------------------
-\setbeamercolor{frametitle}{fg=frenchblue,bg=white}
-
+\setbeamercolor{frametitle}{fg=frenchblue}
+\defbeamertemplate*{frametitle}{smoothbars theme}
+{%
+	\nointerlineskip%
+	\begin{beamercolorbox}[wd=\paperwidth,leftskip=.3cm,rightskip=.3cm plus1fil]{frametitle}
+	\vspace*{-0.2cm}
+	\vskip.3ex
+	\usebeamerfont*{frametitle}\insertframetitle%
+	\vskip.3ex
+	\end{beamercolorbox}%
+}
 
 %-change foot part in each page-------------------------------
 \makeatother
@@ -119,6 +134,7 @@
 \usepackage{bm}
 \usepackage{comment}
 \usepackage{graphics} % used for scalebox
+\usepackage[export]{adjustbox}% right align for includgraphics
 \usepackage{multirow}%used for multicolumn
 \usepackage{array}%used for vrule
 \usepackage{subfigure}
@@ -134,6 +150,10 @@
     set border color=red!80!black,
   },
 }
+%to set a tikz point
+\tikzstyle{na} = [baseline=-.5ex]
+%set tikz
+\usetikzlibrary{fit}
 %-----------------------------------------------
 
 %---set tikz marker-----------------------------
@@ -159,7 +179,29 @@
 
 %used for algorithm
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
-\usepackage{algorithmic}
+
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+
+%===comment in pdf====================
+%notes mode, comment this, we can use textblock
+\usepackage{pgfpages}
+\setbeameroption{second mode text on second screen=left}
+\setbeameroption{show notes on second screen}
+\setbeamertemplate{note page}{%
+  \insertnote%
+}
+\makeatletter 
+\def\beamer@framenotesbegin{% at beginning of slide
+    \usebeamercolor[fg]{normal text}
+    \gdef\beamer@noteitems{}% 
+    \gdef\beamer@notes{}% 
+}
+\makeatother
+\newcommand{\pdfnote}[1]{\note{#1}}
+
+%pure slides mode
+%\newcommand{\pdfnote}[1]{}
 
 
 %########################################
@@ -219,6 +261,7 @@
 
 \include{chaps/chapIntro}
 \include{chaps/chapK2Social}
+%\include{chaps/chapTmp_frame}
 \include{chaps/chapTransDetector}
 \include{chaps/chapUMIETM}
 \include{chaps/chapTD+}
